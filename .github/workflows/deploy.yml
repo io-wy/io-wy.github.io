@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   # 触发条件：当代码推送到 `master` 分支时
   push:
-    branches: [ main ]
+    branches: [ master ]
 
   # 允许手动触发工作流程
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
           # path: . # The root location of your Astro project in the repository. (Optional)
           # node-version: 20 # The specific Node.js version to use for building the site, defaults to 20. (Optional)
           package-manager: pnpm@latest 
-deploy:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
