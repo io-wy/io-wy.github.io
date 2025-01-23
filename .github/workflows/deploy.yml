@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  # 触发条件：当代码推送到 `master` 分支时
+  push:
+    branches: [ main ]
+
+  # 允许手动触发工作流程
+  workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
+        with:
+          # path: . # The root location of your Astro project in the repository. (Optional)
+          # node-version: 20 # The specific Node.js version to use for building the site, defaults to 20. (Optional)
+          package-manager: pnpm@latest 
+deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+        name: github-pages
+        url: ${( steps.deployment.outputs.page_url )}
+    steps:
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
