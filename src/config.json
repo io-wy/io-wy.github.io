@@ -14,9 +14,9 @@
     "avatar": "https://s2.loli.net/2024/04/30/ozsnuS5Ihf3xMBG.webp"
   },
   "hero": {
-    "name": "Gyoza",
-    "bio": "A static blog template build with Astro and React.",
-    "description": "Clean, Cute, Fast.",
+    "name": "io-wy",
+    "bio": "学技术的数学飞舞一枚吖~",
+    "description": "free,forever world.",
     "socials": [
       {
         "name": "Github",
@@ -37,7 +37,7 @@
         "color": "rgb(212, 70, 56)"
       }
     ],
-    "yiyan": "当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。"
+    "yiyan": "我不愿做重复的工作，所以这里只会有自我和自由。"
   },
   "color": {
     "accent": [
