@@ -1,7 +1,7 @@
 ---
 title: mushroom hunter
-date: 2025/1/24T10:54:27.000Z
-tags: [Icon]
+date: 2025-1-24
+tags: [ML]
 category: 记录
 comments: true
 draft: false
