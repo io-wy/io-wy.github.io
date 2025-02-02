@@ -1,6 +1,6 @@
 ---
 title: mushroom hunter
-date: 2025-1-24
+date: 2024-02-02T00:00:00Z
 tags: [ML]
 category: 记录
 comments: true
