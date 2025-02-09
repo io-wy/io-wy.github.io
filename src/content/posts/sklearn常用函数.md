@@ -1,5 +1,5 @@
 ---
-title: 数据分析类问题的框架
+title: sklearn 常用函数
 date: 2025-01-20T10:54:27.000Z
 tags: [ml]
 category: 自用
