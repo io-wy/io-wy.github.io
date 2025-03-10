@@ -6,7 +6,7 @@ comments: true
 
 ## 怎么申请友链？
 
-想要交换友链的小伙伴们，欢迎去本站的 [Github 仓库](https://github.com/lxchapu/astro-gyoza/tree/main/src/content/friends)提交一个 PR。审核通过后，就可以在这里展示啦。
+想要交换友链的小伙伴们，直接私信我就好啦
 
 请在`/src/content/friends/`目录下添加一个`<short-name>.yaml`文件，参考格式：
 
