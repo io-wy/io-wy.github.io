@@ -50,7 +50,7 @@ class ResidualBlock(nn.Module):
         residual = x
         x = F.relu(self.conv1(x))
         x = self.conv2(x)
-        x += residual  # 跳跃连接
+        x += residual  # resnet
         return F.relu(x)
 ```
 
