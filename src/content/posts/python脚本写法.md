@@ -13,6 +13,17 @@ draft: false
 
 是我的python基础太差了才需要这篇blog的
 
+### what you need
+
+- 大佬不必看
+- 你需要有浏览器引擎
+- 了解命令行有python环境(Anaconda)
+- 有偷懒的需求
+
+### 字符串操作
+
+当时逃课了，自己又懒得看QAQ
+
 ### argparse
 
 首先当然是命令行怎么玩
@@ -45,9 +56,7 @@ if __name__="__main__":
 
 ### 文件操作
 
-有os库，pathlib库，shutil库
-
-这个就很无脑了
+#### os库
 
 ```python
 import os
@@ -69,7 +78,11 @@ os.listdir('.')                          # 列出目录内容
 os.path.exists('/path')        # 路径是否存在
 os.path.isfile('file.txt')     # 是否是文件
 os.path.isdir('directory')     # 是否是目录
+#路径生成
+os.path.join('des','name')
 ```
+
+#### pathlib库
 
 ```python
 from pathlib import Path
@@ -82,6 +95,8 @@ if not input_dir.is_dir():
 files = list(input_dir.glob("*.py"))
 ```
 
+#### shutil库
+
 ```python
 import shutil
 
@@ -92,10 +107,12 @@ shutil.copy2('src.txt', 'dst.txt')    # 保留元数据
 # 目录操作
 shutil.copytree('src_dir', 'dst_dir')  # 递归复制目录
 shutil.rmtree('directory')             # 递归删除目录
-
+shutil.move('data.csv','C:/数据分析')
 # 压缩打包
 shutil.make_archive('backup', 'zip', 'src_dir')
 ```
+
+#### 批量化处理
 
 遍历！！！批量化处理的关键
 
@@ -104,7 +121,8 @@ shutil.make_archive('backup', 'zip', 'src_dir')
 for root, dirs, files in os.walk('.'):
     for file in files:
         path = os.path.join(root, file)
-        print(path)
+        if(path.endwith('.csv'))#筛选
+        	print(path)
 
 import glob
 pdf_files = glob.glob('**/*.pdf', recursive=True)
@@ -115,7 +133,7 @@ path = '/home/user/docs/report.pdf'
 
 os.path.basename(path)   # 'report.pdf'
 os.path.dirname(path)    # '/home/user/docs'
-os.path.splitext(path)   # ('/home/user/docs/report', '.pdf')
+os.path.splitext(path)   #('/home/user/docs/report', '.pdf')
 os.path.join('dir', 'sub', 'file.txt')  # 'dir/sub/file.txt'
 ```
 
@@ -149,6 +167,8 @@ with Pool(args.num_processes) as pool:
 ```
 
 #### 正则表达式
+
+我不会
 
 #### Selenium
 
@@ -244,6 +264,66 @@ element.send_keys(Keys.BACKSPACE)
 
 #### Scrapy
 
+```shell
+scrapy startproject mySpider
+```
+
+然后就会有一个文件夹
+
+```shell
+mySpider/
+    scrapy.cfg
+    mySpider/
+        __init__.py
+        items.py
+        pipelines.py
+        settings.py
+        spiders/
+            __init__.py
+            ...
+```
+
+在spiders自己创建一个python文件，这里是zhihu_spider.py
+
+```python
+import scrapy
+class zhihu_spider(scrapy.Spider):
+	name='zhihu_spdier'
+    allowed_domains=['xxx.com']#域名
+    start_urls=['https://www.xxx.com']
+    def parse(self,response):
+        for xx in response.css("xxx")#提取每个xxx的信息
+        	yield{
+                'xxx':xx.css('xxx').get()#xxx的具体信息，用css来解码
+            }
+```
+
+配置，在settings.py
+
+```python
+# 启用日志记录
+LOG_ENABLED = True
+LOG_LEVEL = 'INFO'
+
+# 设置下载延迟，避免对服务器造成过大压力
+DOWNLOAD_DELAY = 1
+
+# 启用User-Agent池
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+```
+
+然后就可以运行了
+
+```shell
+scrapy crawl zhihu_spider
+```
+
+后续一般会把需要的数据导入到csv里面只需要在yield位置修改为pandas或者其他的数据处理的库放入新建的文件就好，创建文件等步骤上文有提及
+
 #### Playwright
+
+之后再学，累了
+
+下面的链接可以练练手
 
 [20个Python 非常实用的自动化脚本 - 虾米哟 - 博客园](https://www.cnblogs.com/zlibraryxiayu/p/18763505)
