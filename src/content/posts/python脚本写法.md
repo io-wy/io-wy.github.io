@@ -42,7 +42,7 @@ if __name__="__main__":
 
 因为是自己用，所以参数的限泛用性可以比较低
 
-### 拋异常
+抛异常玩玩
 
 ```python
     try:
@@ -193,7 +193,7 @@ print(input_first,input_second,input_third)
 browser.close()
 ```
 
-元素获取
+元素获取：这个应该具体问题具体分析，框架大概是下面这样的，下面这一堆是ai教我的，我也不会
 
 ```python
 find_element_by_name
@@ -322,7 +322,7 @@ scrapy crawl zhihu_spider
 
 #### Playwright
 
-之后再学，累了
+不会，和selenium的想法差不多，还有等待机制，鼠标操作，人机验证等问题，目前不需要，懒得学
 
 下面的链接可以练练手
 
