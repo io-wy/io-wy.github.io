@@ -22,7 +22,7 @@ schtasks /create /tn "MyPythonTask" /tr "python C:\scripts\myscript.py" /sc once
 这是模板样例
 
 ```powershell
-schtasks /create /tn "Net_LoginTask" /tr "python C:\Users\86156\Desktop\temp\NJUPT-login-main\NJUPT-login-main\NJUPT-login-CN.py" /sc daily /st 07:05
+schtasks /create /tn "Net_LoginTask" /tr "python C:\Users\xxx\Desktop\temp\Net-login-main\Net-login-main\Net-login-CN.py" /sc daily /st 07:05
 ```
 
 这是我自己的操作
