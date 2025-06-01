@@ -47,11 +47,7 @@ CMD ["python", "main.py"]  # 请替换为你项目的启动命令
 
 `requirements.txt` 文件包含了你项目的所有 Python 依赖。可以通过以下命令生成该文件：
 
-```
-bash
-
-
-复制编辑
+```bash
 pip freeze > requirements.txt
 ```
 
@@ -61,11 +57,7 @@ pip freeze > requirements.txt
 
 在项目目录中，打开终端并执行以下命令来构建 Docker 镜像：
 
-```
-bash
-
-
-复制编辑
+```bash
 docker build -t your_project_name .
 ```
 
@@ -75,11 +67,7 @@ docker build -t your_project_name .
 
 一旦镜像构建完成，你可以通过以下命令来运行容器：
 
-```
-bash
-
-
-复制编辑
+```bash
 docker run --gpus all -it your_project_name
 ```
 
@@ -92,11 +80,7 @@ docker run --gpus all -it your_project_name
 
 #### 将镜像保存为文件：
 
-```
-bash
-
-
-复制编辑
+```bash
 docker save -o your_project_name.tar your_project_name
 ```
 
@@ -106,11 +90,7 @@ docker save -o your_project_name.tar your_project_name
 
 学妹可以通过以下命令导入镜像：
 
-```
-bash
-
-
-复制编辑
+```bash
 docker load -i your_project_name.tar
 ```
 
@@ -120,8 +100,8 @@ docker load -i your_project_name.tar
 
 - **Jupyter Notebook**：如果你希望学妹使用 Jupyter Notebook 可以在 Dockerfile 中安装并配置好 Jupyter：
 
-  ```
-  Dockerfile复制编辑RUN pip install jupyter
+  ```dockerfile
+  RUN pip install jupyter
   CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser"]
   ```
 
@@ -129,12 +109,8 @@ docker load -i your_project_name.tar
 
 - **共享数据文件**：如果项目中有数据文件，可以通过 Docker 的 **volume** 功能来挂载本地文件夹到容器中，从而共享文件数据。
 
-  ```
-  bash
-
-
-  复制编辑
-  docker run -v /path/to/data:/app/data your_project_name
+  ```bash
+  run -v /path/to/data:/app/data your_project_name
   ```
 
 这样，学妹就可以直接运行容器，而不需要配置任何环境。如果她不熟悉命令行操作，你也可以考虑将 Docker 容器与图形化的 Docker Desktop 配合使用，这样会更容易操作。
