@@ -16,7 +16,7 @@ draft: false
 ### **编写dockerfile**
 
 ```dockerfile
-# 使用官方 Python 基础镜像
+# 使用官方 Py 基础镜像
 FROM python:3.8-slim
 
 # 设置工作目录
