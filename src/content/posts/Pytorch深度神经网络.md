@@ -1,7 +1,7 @@
 ---
 title: Pytorch深度神经网络
 date: 2025-02-06T10:54:27.000Z
-tags: [可盐可甜]
+tags: [ai]
 category: 自用
 comments: true
 draft: false

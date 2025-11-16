@@ -1,7 +1,7 @@
 ---
 title: H.264编码协议
 date: 2025-03-10T10:54:27.000Z
-tags: [可盐可甜]
+tags: [others]
 category: 自用
 comments: true
 draft: false

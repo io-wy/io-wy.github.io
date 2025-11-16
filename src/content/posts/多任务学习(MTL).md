@@ -1,7 +1,7 @@
 ---
 title: 多任务学习MTL
 date: 2025-03-24T10:54:27.000Z
-tags: [可盐可甜]
+tags: [ai]
 category: 教程
 comments: true
 draft: false

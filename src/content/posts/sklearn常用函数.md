@@ -1,8 +1,8 @@
 ---
 title: sklearn 常用函数
 date: 2025-01-20T10:54:27.000Z
-tags: [ml]
-category: 自用
+tags: [ai]
+category: data
 comments: true
 draft: false
 ---

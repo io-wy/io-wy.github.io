@@ -1,8 +1,8 @@
 ---
 title: Docker入门
 date: 2025-05-19T10:54:27.000Z
-tags: [docker]
-category: 后端
+tags: [后端]
+category: 自用
 comments: true
 draft: false
 ---
