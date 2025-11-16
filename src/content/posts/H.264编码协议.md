@@ -7,8 +7,6 @@ comments: true
 draft: false
 ---
 
-## H.264编码协议
-
 某学生因学习压缩而压缩学习的抽象历程
 
 ### introduce

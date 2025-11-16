@@ -7,8 +7,6 @@ comments: true
 draft: false
 ---
 
-## sklearn常用函数
-
 （自用）--from 学技术的数学飞舞一枚~！
 
 个人用sklearn主要就是用来做数据处理，当然有的时候会和具有sklearn API 的模型混用

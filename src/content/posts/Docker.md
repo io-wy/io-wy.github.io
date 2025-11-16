@@ -7,8 +7,6 @@ comments: true
 draft: false
 ---
 
-## Docker
-
 当课题组要复现一个项目时，学妹不会配环境，于是，我用docker直接打包环境发给她，~~成功俘获学妹芳心~~发现学妹连docker都不会
 
 首先安装docker，有手就行

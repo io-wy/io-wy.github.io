@@ -7,8 +7,6 @@ comments: true
 draft: false
 ---
 
-## Pytorch深度神经网络
-
 不懂就上官网，这篇没啥理论，纯上手
 
 部分代码来自ai，当然我自己有跑过，ds学ai上手特别快
