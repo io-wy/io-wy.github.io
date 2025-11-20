@@ -1,9 +1,9 @@
 {
   "site": {
     "url": "https://io-wy.github.io",
-    "title": "Gyoza",
+    "title": "Dream of Love - io-wy的博客",
     "description": "这是一个使用 Astro 和 React 开发的博客主题。",
-    "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
+    "keywords": "blog",
     "lang": "zh-CN",
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/apple-touch-icon.png"
