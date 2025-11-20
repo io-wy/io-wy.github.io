@@ -4,11 +4,11 @@ description: 我的小伙伴们和一些有趣的站点。
 comments: true
 ---
 
-## 怎么申请友链？
+## How to ask for friendship？
 
 想要交换友链的小伙伴们，直接私信我就好啦
 
-请在`/src/content/friends/`目录下添加一个`<short-name>.yaml`文件，参考格式：
+请在 `/src/content/friends/`目录下添加一个 `<short-name>.yaml`文件，参考格式：
 
 ```yml
 title: 网站名称
