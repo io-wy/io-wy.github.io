@@ -238,7 +238,7 @@ func main() {
 }
 ```
 
-### Step3 快速进入真实场景
+### Step2 快速进入真实场景
 
 #### 并发编程
 
@@ -276,3 +276,148 @@ func main(){
 ```
 
 #### websocket
+
+### Step3 CRUD需要
+
+#### web框架
+
+##### gin
+
+![image-20251129201904854](D:%5C0%20program%5Cblog%5Cio-wy.github.io%5Csrc%5Ccontent%5Cposts%5Cimage-20251129201904854.png)
+
+优势说完了，开始说怎么用
+
+###### Quick Start
+
+```go
+package main
+import(
+	"net/http"
+	"github.com/gin-gonic/gin"
+)
+func main(){
+	r:=gin.Default()
+	r.GET("/ping",func(c *gin.Context){
+		c.JSON(http.StatusOK,gin.H{
+			"message":"pong",
+		})
+	})
+	r.Run()
+}//默认监听localhost:8000
+```
+
+###### Build Your Program
+
+![image-20251129202747594](D:%5C0%20program%5Cblog%5Cio-wy.github.io%5Csrc%5Ccontent%5Cposts%5Cimage-20251129202747594.png)
+
+然后这个时候你就应该找到一个项目，开始copy on writing
+
+##### kratos
+
+##### go-zero
+
+#### mq（消息队列）
+
+#### redis
+
+#### gorm（数据库）
+
+**gorm**可以直接理解成go写的orm，orm定义如下：Object-Relationl Mapping， 它的作用是映射数据库和对象之间的关系，方便我们在实现数据库操作的时候不用去写复杂的sql语句，把对数据库的操作上升到对于对象的操作。
+
+##### 上手gorm
+
+go.mod添加
+
+```go
+require{
+	github.com/jinzhu/gorm v1.9.12
+}
+```
+
+##### 创建DB连接，然后开始CRUD
+
+```go
+package main
+import(
+	"github.com/jinzhu/gorm"
+	_"github.com/jinzhu/gorm/dialects/mysql"
+)
+func main(){
+	var err error
+	db,connErr :=gorm.Open("mysql",xxxx)
+    if connErr != nil {
+        panic("failed to connect database")
+    }
+    defer db.Close()
+  db.SingularTable(true)
+}
+```
+
+gorm支持很多数据库，比如说PostgreSQL，MYSQL等
+
+创建映射表的struct
+
+```go
+CREATE TABLE `test` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(5) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+type Test struct {
+    ID   int64  `gorm:"type:bigint(20);column:id;primary_key"`
+    Name string `gorm:"type:varchar(5);column:name"`
+    Age  int    `gorm:"type:int(11);column:age"`
+}
+```
+
+然后就是增删改查
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+)
+
+// UserInfo 用户信息
+type UserInfo struct {
+	ID uint
+	Name string
+	Gender string
+	Hobby string
+}
+func main() {
+	db, err := gorm.Open("mysql", "root:root1234@(127.0.0.1:13306)/db1?charset=utf8mb4&parseTime=True&loc=Local")
+	if err!= nil{
+		panic(err)
+	}
+	defer db.Close()
+	// 自动迁移
+	db.AutoMigrate(&UserInfo{})
+	u1 := UserInfo{1, "七米", "男", "篮球"}
+	u2 := UserInfo{2, "沙河娜扎", "女", "足球"}
+	// 创建记录
+	db.Create(&u1)
+	db.Create(&u2)
+	// 查询
+	var u = new(UserInfo)
+	db.First(u)
+	fmt.Printf("%#v\n", u)
+	var uu UserInfo
+	db.Find(&uu, "hobby=?", "足球")
+	fmt.Printf("%#v\n", uu)
+	// 更新
+	db.Model(&u).Update("hobby", "双色球")
+	// 删除
+	db.Delete(&u)
+}
+```
+
+### Step4 what do u need （进阶）
+
+##### GMP
+
+##### 并发底层实现（golang）

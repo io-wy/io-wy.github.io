@@ -19,6 +19,10 @@
       dark: chroma.mix('rgb(0,2,18)', accentColor.dark, 0.12, 'rgb'),
     }
 
+    // 背景图路径
+    const bgLight = accentColor.bgLight || '/bg.jpg'
+    const bgDark = accentColor.bgDark || '/bg.jpg'
+
     const $style = document.createElement('style')
     $style.textContent = `html {
   --color-accent: ${getRgbVal(chroma(accentColor.light))};
@@ -28,6 +32,8 @@
   --color-text-primary: ${getRgbVal(chroma(themeColor.text.primary.light))};
   --color-text-secondary: ${getRgbVal(chroma(themeColor.text.secondary.light))};
   --color-border-primary: ${getRgbVal(chroma(themeColor.border.primary.light))};
+  --bg-image: url('${bgLight}');
+  --bg-overlay: rgba(255, 255, 255, 0.75);
 }
 [data-theme='dark'] {
   --color-accent: ${getRgbVal(chroma(accentColor.dark))};
@@ -37,6 +43,8 @@
   --color-text-primary: ${getRgbVal(chroma(themeColor.text.primary.dark))};
   --color-text-secondary: ${getRgbVal(chroma(themeColor.text.secondary.dark))};
   --color-border-primary: ${getRgbVal(chroma(themeColor.border.primary.dark))};
+  --bg-image: url('${bgDark}');
+  --bg-overlay: rgba(0, 0, 0, 0.6);
 }`
     document.head.appendChild($style)
   }

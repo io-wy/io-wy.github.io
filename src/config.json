@@ -41,16 +41,16 @@
   },
   "color": {
     "accent": [
-      { "light": "#F55555", "dark": "#FCCF31" },
-      { "light": "#0396FF", "dark": "#ABDCFF" },
-      { "light": "#fb7287", "dark": "#99D8CF" },
-      { "light": "#F072B6", "dark": "#FFF886" },
-      { "light": "#9F44D3", "dark": "#E2B0FF" },
-      { "light": "#FF6666", "dark": "#A1CCD1" },
-      { "light": "#F6416C", "dark": "#838BC6" },
-      { "light": "#32CCBC", "dark": "#90F7EC" },
-      { "light": "#33A6B8", "dark": "#79F1A4" },
-      { "light": "#F55555", "dark": "#FCCF31" }
+      { "light": "#F55555", "dark": "#FCCF31", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#0396FF", "dark": "#ABDCFF", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#fb7287", "dark": "#99D8CF", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#F072B6", "dark": "#FFF886", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#9F44D3", "dark": "#E2B0FF", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#FF6666", "dark": "#A1CCD1", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#F6416C", "dark": "#838BC6", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#32CCBC", "dark": "#90F7EC", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#33A6B8", "dark": "#79F1A4", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" },
+      { "light": "#F55555", "dark": "#FCCF31", "bgLight": "/bg.jpg", "bgDark": "/bg.jpg" }
     ],
     "bg": {
       "primary": { "light": "#ffffff", "dark": "#1c1c1e" },

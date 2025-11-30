@@ -33,14 +33,14 @@ html {
   color: theme('textColor.primary');
   background-color: theme('backgroundColor.root');
   scroll-padding-top: 64px;
-  background-image: url('/bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  /* 若需要遮罩可加线性渐变覆盖颜色 */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-    url('/bg.jpg');
+  /* 使用 CSS 变量来动态设置背景图和透明覆盖层 */
+  --bg-image: url('/bg.jpg');
+  --bg-overlay: rgba(255, 255, 255, 0.75);
+  background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--bg-image);
 }
 
 html.gray {
