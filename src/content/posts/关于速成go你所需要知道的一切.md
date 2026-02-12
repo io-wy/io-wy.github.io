@@ -1,12 +1,11 @@
 ---
-title: 关于速成go你所需要知道的一切
+title: Go一点点
 date: 2025-11-25T10:54:27.000Z
 tags: [后端]
 category: 自用
 comments: true
 draft: false
 ---
-
 ### Step 0 开发环境配置
 
 自行处理，懒得截图

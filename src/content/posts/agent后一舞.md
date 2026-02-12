@@ -1,5 +1,5 @@
 ---
-title: agent或许最有一舞
+title: agent一些没啥用的内容
 date: 2025-12-14T10:54:27.000Z
 tags: [ai]
 category: 自用
