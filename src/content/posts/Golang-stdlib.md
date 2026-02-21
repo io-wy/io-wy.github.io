@@ -97,7 +97,7 @@ func counter() func() int {
 
 使用
 
-```golang
+```go
 c := counter()
 
 fmt.Println(c()) // 1
@@ -107,7 +107,7 @@ fmt.Println(c()) // 3
 
 闭包拿到的是count的地址，而不是值，因此每次都会读取这个地址的值，继续增加，对于编译器来说，会把闭包变成这样
 
-```golang
+```go
 type closure struct {
     x *int
 }//闭包用到的原函数的地址
@@ -118,7 +118,7 @@ func (c *closure) call() {
 
 当闭包捕获变量的时候，这个变量通常会逃逸到堆上，因为函数返回变量后还要活着，如果还在栈上的话就会回收了，这里我们还能考虑到一个大坑
 
-```golang
+```go
 func main() {
     for i := 0; i < 3; i++ {
         go func() {
@@ -348,7 +348,7 @@ func main() {
 
 终端跑一下demo
 
-```bash
+```shell
 $ go run main.go -word=opt -numb=7 -fork -svar=flag
  
 word:  opt
