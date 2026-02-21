@@ -16,7 +16,7 @@ go的错误处理是一种哲学，error is value！
 
 err的本质
 
-```golang
+```go
 type error interface {
     Error() string
 }
@@ -41,7 +41,7 @@ type error interface {
 
 以文件操作作为例子
 
-```golang
+```go
 func main(){
 	file, err := os.Open("test.txt")
 	if err := nil{
@@ -57,7 +57,7 @@ func main(){
 
 在特殊情况我们想要进行处理，应该这么写defer
 
-```golang
+```go
  func fileClose() (err error) {
       file, err := os.Open("test.txt")
      if err != nil{
@@ -84,7 +84,7 @@ func main(){
 
 闭包很值得在意的是，函数会携带状态
 
-```golang
+```go
 func counter() func() int {
     count := 0
 
@@ -132,7 +132,7 @@ func main() {
 
 如果要写的话可以这么做
 
-```golang
+```go
 for i := 0; i < 3; i++ {
     go func(i int) {
         fmt.Println(i)
@@ -144,7 +144,7 @@ for i := 0; i < 3; i++ {
 
 构造私有状态
 
-```golang
+```go
 func NewUser(name string) func() string {
     return func() string {
         return name
@@ -154,7 +154,7 @@ func NewUser(name string) func() string {
 
 Web框架的中间件
 
-```golang
+```go
 func logger(next Handler) Handler {
     return func(ctx Context) {
         fmt.Println("before")
@@ -166,7 +166,7 @@ func logger(next Handler) Handler {
 
 上面提到的延迟执行
 
-```golang
+```go
 defer func() {
     fmt.Println(x)
 }()
@@ -174,7 +174,7 @@ defer func() {
 
 函数工厂
 
-```golang
+```go
 func multiply(factor int) func(int) int {
     return func(x int) int {
         return x * factor
@@ -188,7 +188,7 @@ func multiply(factor int) func(int) int {
 
 **文件名直接读取**
 
-```golang
+```go
 func fileOne() {
 	content, err := os.ReadFile("test.txt")
 	if err != nil {
@@ -200,7 +200,7 @@ func fileOne() {
 
 **先创建文件句柄再读取文件**
 
-```golang
+```go
 func fileThree() {
 	file, err := os.Open("test.txt")
 	if err != nil {
@@ -219,7 +219,7 @@ func fileThree() {
 
 主要操作使用ioutil库，其中两个方法可以实现按行读取，但是要注意，真的按行读取时根据\n来区分每一行的，如果是没有分行的大文件，就不能使用按行读取了( **注意trim**！)
 
-```golang
+```go
 func fileSix() {
 	// 创建文件句柄
 	fi, err := os.Open("test.txt")
@@ -249,7 +249,7 @@ func fileSix() {
 
 对于不分行的大文件，只能按字节来读取整个文件（使用os库）（也可以使用syscall库）
 
-```golang
+```go
 func fileSeven() {
 	// 创建文件句柄
 	fi, err := os.Open("test.txt")
@@ -278,7 +278,7 @@ func fileSeven() {
 
 总结一下
 
-```golang
+```go
   // 1. 小文件直接读完
     data, err := os.ReadFile("a.txt")
     fmt.Println(string(data))
