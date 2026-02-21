@@ -15,8 +15,8 @@
   },
   "hero": {
     "name": "io-wy",
-    "bio": "学技术的数学飞舞一枚吖~",
-    "description": "从今天开始！希望能坚持两天一更",
+    "bio": "fvvv",
+    "description": "Technoloy & Aesthetics",
     "socials": [
       {
         "name": "Github",
@@ -66,27 +66,27 @@
   },
   "menus": [
     {
-      "name": "首页",
+      "name": "homepage",
       "link": "/",
       "icon": "icon-pantone"
     },
     {
-      "name": "归档",
+      "name": "stat",
       "link": "/archives",
       "icon": "icon-archive"
     },
     {
-      "name": "项目",
+      "name": "projects",
       "link": "/projects",
       "icon": "icon-flask"
     },
     {
-      "name": "关于",
+      "name": "myself",
       "link": "/about",
       "icon": "icon-ghost"
     },
     {
-      "name": "友链",
+      "name": "friends",
       "link": "/friends",
       "icon": "icon-hearts"
     }
