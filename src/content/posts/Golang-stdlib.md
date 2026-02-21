@@ -1,5 +1,5 @@
 ---
-title: golang-stdlib
+title: go-stdlib
 date: 2026-02-22T10:54:27.000Z
 tags: [backend]
 category: 自用
