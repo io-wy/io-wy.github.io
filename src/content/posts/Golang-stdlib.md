@@ -5,9 +5,7 @@ tags: [backend]
 category: 自用
 comments: true
 draft: false
-
 ---
-
 有点晚了，没有太多想法，就多写点东西吧
 
 ## 错误处理
@@ -18,7 +16,7 @@ go的错误处理是一种哲学，error is value！
 
 err的本质
 
-```go
+```golang
 type error interface {
     Error() string
 }
@@ -43,7 +41,7 @@ type error interface {
 
 以文件操作作为例子
 
-```go
+```golang
 func main(){
 	file, err := os.Open("test.txt")
 	if err := nil{
@@ -86,7 +84,7 @@ func main(){
 
 闭包很值得在意的是，函数会携带状态
 
-```go
+```golang
 func counter() func() int {
     count := 0
 
@@ -99,7 +97,7 @@ func counter() func() int {
 
 使用
 
-```go
+```golang
 c := counter()
 
 fmt.Println(c()) // 1
@@ -109,7 +107,7 @@ fmt.Println(c()) // 3
 
 闭包拿到的是count的地址，而不是值，因此每次都会读取这个地址的值，继续增加，对于编译器来说，会把闭包变成这样
 
-```go
+```golang
 type closure struct {
     x *int
 }//闭包用到的原函数的地址
@@ -120,7 +118,7 @@ func (c *closure) call() {
 
 当闭包捕获变量的时候，这个变量通常会逃逸到堆上，因为函数返回变量后还要活着，如果还在栈上的话就会回收了，这里我们还能考虑到一个大坑
 
-```go
+```golang
 func main() {
     for i := 0; i < 3; i++ {
         go func() {
@@ -134,7 +132,7 @@ func main() {
 
 如果要写的话可以这么做
 
-```go
+```golang
 for i := 0; i < 3; i++ {
     go func(i int) {
         fmt.Println(i)
@@ -146,7 +144,7 @@ for i := 0; i < 3; i++ {
 
 构造私有状态
 
-```go
+```golang
 func NewUser(name string) func() string {
     return func() string {
         return name
@@ -156,7 +154,7 @@ func NewUser(name string) func() string {
 
 Web框架的中间件
 
-```go
+```golang
 func logger(next Handler) Handler {
     return func(ctx Context) {
         fmt.Println("before")
@@ -168,7 +166,7 @@ func logger(next Handler) Handler {
 
 上面提到的延迟执行
 
-```go
+```golang
 defer func() {
     fmt.Println(x)
 }()
@@ -176,7 +174,7 @@ defer func() {
 
 函数工厂
 
-```go
+```golang
 func multiply(factor int) func(int) int {
     return func(x int) int {
         return x * factor
@@ -190,7 +188,7 @@ func multiply(factor int) func(int) int {
 
 **文件名直接读取**
 
-```go
+```golang
 func fileOne() {
 	content, err := os.ReadFile("test.txt")
 	if err != nil {
@@ -202,7 +200,7 @@ func fileOne() {
 
 **先创建文件句柄再读取文件**
 
-```go
+```golang
 func fileThree() {
 	file, err := os.Open("test.txt")
 	if err != nil {
@@ -221,7 +219,7 @@ func fileThree() {
 
 主要操作使用ioutil库，其中两个方法可以实现按行读取，但是要注意，真的按行读取时根据\n来区分每一行的，如果是没有分行的大文件，就不能使用按行读取了( **注意trim**！)
 
-```go
+```golang
 func fileSix() {
 	// 创建文件句柄
 	fi, err := os.Open("test.txt")
@@ -251,7 +249,7 @@ func fileSix() {
 
 对于不分行的大文件，只能按字节来读取整个文件（使用os库）（也可以使用syscall库）
 
-```go
+```golang
 func fileSeven() {
 	// 创建文件句柄
 	fi, err := os.Open("test.txt")
@@ -280,7 +278,7 @@ func fileSeven() {
 
 总结一下
 
-```go
+```golang
   // 1. 小文件直接读完
     data, err := os.ReadFile("a.txt")
     fmt.Println(string(data))
@@ -451,7 +449,7 @@ strings.HasPrefix
 strings.Builder
 ```
 
-高性能拼接（比直接`+`有用）
+高性能拼接（比直接 `+`有用）
 
 ```go
 var b strings.Builder
@@ -459,16 +457,3 @@ b.WriteString("hello")
 b.WriteString(" world")
 s := b.String()
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
