@@ -1,7 +1,15 @@
 {
-    "title": "Koibumi Blog",
-    "description": "Koibumi Blog",
+    "title": "io-wy Blog",
+    "description": "io-wy Blog",
     "favicon": "/favicon.svg",
-    "bio": "Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea.",
-    "copyright_name": "Amaki Eureka"
+    "bio": "111",
+    "copyright_name": "io-wy",
+    "links": [
+        {
+            "name": "Eureka's Blog",
+            "url": "https://blog.plr.moe/",
+            "avatar": "https://blog.plr.moe/avatar.png",
+            "description": "Koibumi 模板作者的博客"
+        }
+    ]
 }

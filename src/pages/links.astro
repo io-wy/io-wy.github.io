@@ -1,0 +1,102 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import siteConfig from '../../content/site.json';
+import Card from "@/components/Card.astro";
+
+const SITE_TITLE = siteConfig.title;
+const links = (siteConfig as any).links || [];
+---
+
+<RootLayout title="Links - {SITE_TITLE}" description="Friend links" width="md">
+    <Card>
+        <h1>Links</h1>
+    </Card>
+
+    {links.length > 0 ? (
+        <div class="links-grid">
+            {links.map((link: any) => (
+                <a href={link.url} class="link-card" target="_blank" rel="noopener noreferrer">
+                    {link.avatar && (
+                        <div class="link-avatar-wrapper">
+                            <img src={link.avatar} alt={link.name} class="link-avatar" />
+                        </div>
+                    )}
+                    <div class="link-info">
+                        <h3 class="link-name">{link.name}</h3>
+                        {link.description && <p class="link-desc">{link.description}</p>}
+                    </div>
+                </a>
+            ))}
+        </div>
+    ) : (
+        <Card>
+            <p>暂无友链 / No links yet</p>
+        </Card>
+    )}
+</RootLayout>
+
+<style>
+    h1 {
+        text-align: center;
+        margin: 0;
+    }
+
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .link-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: var(--color-card);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(132, 94, 194, 0.25);
+            border-color: var(--color-primary);
+        }
+    }
+
+    .link-avatar-wrapper {
+        flex-shrink: 0;
+    }
+
+    .link-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--color-primary);
+    }
+
+    .link-info {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .link-name {
+        margin: 0;
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+
+    .link-desc {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--color-muted-foreground);
+        line-height: 1.4;
+    }
+</style>

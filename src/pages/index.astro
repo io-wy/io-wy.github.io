@@ -5,7 +5,6 @@ import { Icon } from "astro-icon/components";
 import siteConfig from '../../content/site.json';
 import Card from "@/components/Card.astro";
 import PostCard from "../components/PostCard.astro";
-import BigAvatar from "@/components/avatar.svg";
 
 const SITE_TITLE = siteConfig.title;
 const SITE_DESCRIPTION = siteConfig.description;
@@ -17,13 +16,13 @@ const posts = (await getCollection("blog"))
 
 <RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION} width="md">
     <Card id="avatar-bio">
-        <BigAvatar class="big-avatar"/>
+        <img class="big-avatar" src="/avatar.jpg" alt="Avatar"/>
         <section id="bio">
             <h2 class="emphasize">
                 {SITE_TITLE}
             </h2>
             <p>
-                Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea.
+                The dreamer never existed.
             </p>
             <div>
                 <p>

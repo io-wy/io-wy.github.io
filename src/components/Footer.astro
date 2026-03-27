@@ -15,11 +15,6 @@ const COPYRIGHT_NAME = siteConfig.copyright_name;
   <p>
     Powered by {COPYRIGHT_NAME}
   </p>
-  <p>
-    The background image is from
-    <a href="https://www.pixiv.net/artworks/72467113" class="link only-light">Pixiv: 72467113</a>
-    <a href="https://www.pixiv.net/artworks/133357172" class="link only-dark">Pixiv: 133357172</a>
-  </p>
 </footer>
 
 <style lang="scss">
@@ -34,19 +29,5 @@ const COPYRIGHT_NAME = siteConfig.copyright_name;
 
   footer {
     text-align: center;
-  }
-
-  .only-light {
-    display: inline;
-    html.dark & {
-      display: none;
-    }
-  }
-
-  .only-dark {
-    display: none;
-    html.dark & {
-      display: inline;
-    }
   }
 </style>
