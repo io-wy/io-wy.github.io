@@ -1,7 +1,7 @@
 ---
 title: 'OpenCode Overview'
 description: 'Opensource Coding-Agent'
-pubDate: '2025-03-27'
+pubDate: '2026-02-13'
 heroImage: '/img/19.png'
 tags:
   - tools
