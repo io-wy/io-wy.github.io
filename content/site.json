@@ -28,6 +28,12 @@
             "url": "https://www.emmmxx.xyz/zh",
             "avatar": "https://avatars.githubusercontent.com/u/86453687",
             "description": "网络 && 前端"
+        },
+        {
+            "name": "lvmo",
+            "url": "https://lvmolvmo.github.io/",
+            "avatar": "https://lvmolvmo.github.io/images/android-chrome-192x192.png",
+            "description": "computer vision(researcher)"
         }
     ]
 }
