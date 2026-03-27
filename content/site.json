@@ -12,6 +12,12 @@
             "description": "ctf,密码学大神 Sean!"
         },
         {
+            "name": "lvmo",
+            "url": "https://lvmolvmo.github.io/",
+            "avatar": "https://lvmolvmo.github.io/images/android-chrome-192x192.png",
+            "description": "computer vision(researcher)"
+        },
+        {
             "name": "s3loy",
             "url": "https://blog.s3loy.tech/",
             "avatar": "https://blog.s3loy.tech/_astro/avatar.9KccEqOk_Z1LsABb.webp",
@@ -28,12 +34,7 @@
             "url": "https://www.emmmxx.xyz/zh",
             "avatar": "https://avatars.githubusercontent.com/u/86453687",
             "description": "网络 && 前端"
-        },
-        {
-            "name": "lvmo",
-            "url": "https://lvmolvmo.github.io/",
-            "avatar": "https://lvmolvmo.github.io/images/android-chrome-192x192.png",
-            "description": "computer vision(researcher)"
         }
+
     ]
 }
