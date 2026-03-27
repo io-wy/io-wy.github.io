@@ -6,7 +6,7 @@
     "copyright_name": "io-wy",
     "links": [
         {
-            "name": "Eureka's Blog",
+            "name": "Max",
             "url": "https://blog.plr.moe/",
             "avatar": "https://blog.plr.moe/avatar.png",
             "description": "Koibumi 模板作者的博客"
@@ -16,6 +16,12 @@
             "url": "https://seandictionary.top/",
             "avatar": "https://seandictionary.top/wp-content/uploads/2024/09/哭哭_透明.png",
             "description": "ctf,密码学大神 Sean!"
+        },
+        {
+            "name": "s3",
+            "url": "https://blog.s3loy.tech/",
+            "avatar": "https://blog.s3loy.tech/_astro/avatar.9KccEqOk_Z1LsABb.webp",
+            "description": "运维 go ing s3loy"
         }
     ]
 }
