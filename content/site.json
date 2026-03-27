@@ -10,6 +10,12 @@
             "url": "https://blog.plr.moe/",
             "avatar": "https://blog.plr.moe/avatar.png",
             "description": "Koibumi 模板作者的博客"
+        },
+        {
+            "name": "SeanDictionary",
+            "url": "https://seandictionary.top/",
+            "avatar": "https://seandictionary.top/wp-content/uploads/2024/09/哭哭_透明.png",
+            "description": "ctf,密码学大神 Sean!"
         }
     ]
 }
