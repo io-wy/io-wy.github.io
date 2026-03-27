@@ -22,6 +22,12 @@
             "url": "https://blog.s3loy.tech/",
             "avatar": "https://blog.s3loy.tech/_astro/avatar.9KccEqOk_Z1LsABb.webp",
             "description": "运维 go ing s3loy"
+        },
+        {
+            "name": "symb0x76",
+            "url": "https://blog0x76.vercel.app/",
+            "avatar": "https://blog0x76.vercel.app/images/avatar.jpg",
+            "description": "舞萌 C# 客户端"
         }
     ]
 }
