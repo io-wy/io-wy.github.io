@@ -93,13 +93,11 @@ $$h_{\ell + 1} = h_\ell + \sum_{m \in \mathcal{H}_\ell} \mathrm{Head}_m(h_\ell) 
 
 进来研究的diffusion，解释问题带入动态视角，前向噪声如下
 
-$$q(x_t \mid x_0) = \mathcal{N}\!\left(\sqrt{\bar{\alpha}_t}\, x_0,\; (1 - \bar{\alpha}_t)I\right),$$
+$$q(x_t \mid x_0) = \mathcal{N}\!\left(\sqrt{\bar{\alpha}_t}\, x_0,\; (1 - \bar{\alpha}_t)I\right) $$
 
 训练目标，大多是预测网络噪声
 
-$$\mathcal{L}_{\mathrm{simple}} =
-\mathbb{E}_{x_0,\epsilon,t}
-\left[\lVert \epsilon - \epsilon_\theta(x_t, t, c) \rVert_2^2\right].$$
+$$\mathcal{L}_{\mathrm{simple}} = \mathbb{E}_{x_0,\epsilon,t} \left[\lVert \epsilon - \epsilon_\theta(x_t, t, c) \rVert_2^2\right] $$
 
 这意味着模型的行为不是一个简单的静态传播决定的，而做成了多步去噪轨迹共同决定；因此解释就必须有两个问题
 
