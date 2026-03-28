@@ -21,7 +21,7 @@ tags:
 
 #### gradient
 
-最早的一类方法把解释定义为输出对输入的局部敏感性。以最为trivial的分来举例子，对于类别 c 的 score `s_c(x)`，saliency map 可以写作
+最早的一类方法把解释定义为输出对输入的局部敏感性。以最为trivial的分来举例子，对于类别 c 的 score $s_c(x)$，saliency map 可以写作
 
 $$ A_i(x) = \frac{\partial S_c(x)}{\partial x_i} $$
 
