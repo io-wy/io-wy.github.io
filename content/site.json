@@ -9,7 +9,7 @@
             "name": "SeanDictionary",
             "url": "https://seandictionary.top/",
             "avatar": "https://seandictionary.top/wp-content/uploads/2024/09/哭哭_透明.png",
-            "description": "ctf,密码学大神 Sean!"
+            "description": "ctf Crypto Sean!"
         },
         {
             "name": "lvmo",
@@ -18,22 +18,28 @@
             "description": "computer vision(researcher)"
         },
         {
+            "name": "Max",
+            "url": "https://maxqian.cn/",
+            "avatar": "https://maxqian.cn/_astro/avatar.OT9EZtl0_Z1epbX8.webp",
+            "description": "Full-Stack and StarrySky"
+        },        
+        {
             "name": "s3loy",
             "url": "https://blog.s3loy.tech/",
             "avatar": "https://blog.s3loy.tech/_astro/avatar.9KccEqOk_Z1LsABb.webp",
-            "description": "运维 go ing s3loy"
+            "description": "O&M and Golang"
         },
         {
             "name": "symb0x76",
             "url": "https://blog0x76.vercel.app/",
             "avatar": "https://blog0x76.vercel.app/images/avatar.jpg",
-            "description": "舞萌 C# 客户端"
+            "description": "wmc C#"
         },
         {
             "name": "emmm",
             "url": "https://www.emmmxx.xyz/zh",
             "avatar": "https://avatars.githubusercontent.com/u/86453687",
-            "description": "网络 && 前端"
+            "description": "Frontend and Network"
         },
         {
             "name": "William Wei",
