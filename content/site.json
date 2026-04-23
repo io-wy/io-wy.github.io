@@ -28,7 +28,13 @@
             "url": "http://cube1345.github.io/",
             "avatar": "http://cube1345.github.io/img/lilisi1.jpg",
             "description": "Embedded and C && frontend"
-        },     
+        },   
+        {
+            "name": "https://blog.ptilopsis.cv/",
+            "url": "https://blog.ptilopsis.cv/",
+            "avatar": "https://blog.ptilopsis.cv/images/avatar.jpg",
+            "description": "C# and Network(wmc++)"
+        },  
         {
             "name": "s3loy",
             "url": "https://blog.s3loy.tech/",
