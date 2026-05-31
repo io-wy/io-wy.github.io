@@ -38,6 +38,9 @@ importers:
       '@fontsource/klee-one':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource/noto-sans-sc':
+        specifier: ^5.2.9
+        version: 5.2.9
       '@iconify-json/logos':
         specifier: ^1.2.10
         version: 1.2.10
@@ -406,6 +409,9 @@ packages:
 
   '@fontsource/klee-one@5.2.8':
     resolution: {integrity: sha512-DBJgwhCH1RLtwwqGtcQFa97KZikjYPWyotJaAZzgJTP/7VnARPsMMT4iQhHZzzdrT0fR9vKY55R+DkocRC6Uhw==}
+
+  '@fontsource/noto-sans-sc@5.2.9':
+    resolution: {integrity: sha512-bTUIWGBgJDpwi5qAr+x0/lcgv80IHTB9vl6s2f6EymZEa7qYV99yNRBZuKFT+SYDKVunZrjCEhWtpxqmbXWl5Q==}
 
   '@fortawesome/fontawesome-free@6.7.2':
     resolution: {integrity: sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA==}
@@ -3425,6 +3431,8 @@ snapshots:
   '@fontsource/comic-neue@5.2.7': {}
 
   '@fontsource/klee-one@5.2.8': {}
+
+  '@fontsource/noto-sans-sc@5.2.9': {}
 
   '@fortawesome/fontawesome-free@6.7.2': {}
 
