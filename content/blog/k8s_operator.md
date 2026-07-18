@@ -1,5 +1,5 @@
 ---
-title: 'Kubernetes Operator
+title: 'Kubernetes Operator'
 description: '深入 Operator 架构，理解 client-go 的 Informer/Workqueue 机制，再到 controller-runtime 的 Reconcile 模式'
 pubDate: '2026-07-16'
 heroImage: '/img/2.png'
