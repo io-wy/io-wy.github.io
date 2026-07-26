@@ -1,8 +1,18 @@
-# 大模型推理服务系统：从请求入口到 GPU 内核的完整链路
+---
+title: 'LLM-Inference-Serving'
+description: '大模型推理服务系统（请求管理、会话、KV Cache、调度批次与分布式Worker）'
+pubDate: '2026-07-16'
+heroImage: '/img/2.png'
+tags:
+  - kubernetes
+  - operator
+  - controller
+  - client-go
+  - controller-runtime
+---
 
-> 本文基于大模型服务系统的脉络，结合 Orca、vLLM、SGLang、TGI、DistServe / Splitwise 等经典文章与项目，系统梳理生成式大模型推理服务（LLM Serving）的核心架构。重点放在**服务系统**本身——如何管理请求、会话、KV Cache、调度批次与分布式 Worker——而非单纯的算子级推理加速。
->
-> **关于源码**：正文中的代码块为便于理解的**简化示意**；真实项目源码片段请见文末「源码附录」，其中引用了 vLLM V1 与 SGLang 主干代码。
+
+本文基于大模型服务系统的脉络（从请求入口到GPU内核），结合 Orca、vLLM、SGLang、TGI、DistServe / Splitwise 等经典文章与项目，系统梳理生成式大模型推理服务（LLM Serving）的核心架构。重点放在**服务系统**本身——如何管理请求、会话、KV Cache、调度批次与分布式 Worker——而非单纯的算子级推理加速。
 
 ---
 
