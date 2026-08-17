@@ -31,26 +31,26 @@
         },   
         {
             "name": "ptilopsis",
-            "url": "https://blog.ptilopsis.cv/",
-            "avatar": "https://blog.ptilopsis.cv/images/avatar.jpg",
-            "description": "C# and Network(wmc++)"
+            "url": "https://blog.ptilopsis.cn/",
+            "avatar": "https://blog.ptilopsis.cn/images/avatar.png",
+            "description": "C# and Network(wmc+++)"
         },  
         {
             "name": "s3loy",
-            "url": "https://blog.s3loy.tech/",
-            "avatar": "https://blog.s3loy.tech/_astro/avatar.9KccEqOk_Z1LsABb.webp",
+            "url": "https://blog.s3loy.top/",
+            "avatar": "https://blog.s3loy.top/_astro/avatar.DkwP9DMF_ZwvBkS.webp",
             "description": "O&M and Golang"
         },
         {
             "name": "symb0x76",
-            "url": "https://blog0x76.vercel.app/",
-            "avatar": "https://blog0x76.vercel.app/images/avatar.jpg",
-            "description": "wmc C#"
+            "url": "https://blog.symb0x76.top/",
+            "avatar": "https://blog.symb0x76.top/avatar.webp",
+            "description": "wmc C# C++"
         },
         {
             "name": "emmm",
-            "url": "https://www.emmmxx.xyz/zh",
-            "avatar": "https://avatars.githubusercontent.com/u/86453687",
+            "url": "https://blog.zzemy.top",
+            "avatar": "https://avatars.githubusercontent.com/u/86453687?v=4",
             "description": "Frontend and Network"
         },
         {
@@ -58,6 +58,24 @@
             "url": "https://williamwei.top",
             "avatar": "https://williamwei.top/links/avatar.webp",
             "description": "Everything will be well. Hopefully"
+        },
+        {
+            "name": "Rouming Fei",
+            "url": "https://blog.rouming-fei.top/",
+            "avatar": "https://blog.rouming-fei.top/assets/images/avatar/avatar.jpg",
+            "description": "Games & Client"
+        },
+        {
+            "name": "PureStream",
+            "url": "https://marblue.pink/",
+            "avatar": "https://marblue.pink/img/purestream.jpg",
+            "description": "Web Safety"
+        },
+        {
+            "name": "y11han",
+            "url": "https://blog.y11han.icu",
+            "avatar": "https://q.qlogo.cn/g?b=qq&nk=2172029629&s=640",
+            "description": "Linux"
         }
 
     ]

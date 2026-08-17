@@ -6,7 +6,7 @@ heroImage: '/img/23.png'
 tags:
   - LLM
   - infra
-  - 推理服务
+  - Inference
 ---
 
 
