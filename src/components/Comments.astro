@@ -1,0 +1,107 @@
+---
+import siteConfig from '../../content/site.json';
+import Card from './Card.astro';
+
+interface GiscusConfig {
+  repo: string;
+  repoId: string;
+  category: string;
+  categoryId: string;
+  mapping?: string;
+  strict?: boolean;
+  reactionsEnabled?: boolean;
+  emitMetadata?: boolean;
+  inputPosition?: string;
+  lang?: string;
+  loading?: string;
+}
+
+const giscus = (siteConfig as { giscus?: GiscusConfig }).giscus;
+const enabled = !!giscus?.repo && !!giscus?.repoId && !!giscus?.categoryId;
+---
+
+{
+  enabled && (
+    <section class="comments-section" aria-label="Comments">
+      <Card>
+        <h2 class="comments-title">评论</h2>
+        <div class="giscus"></div>
+        <script is:inline define:vars={{ config: giscus }}>
+        (function loadGiscus(config) {
+          const THEME_KEY = '\u{1090C}theme';
+
+          function getTheme() {
+            if (typeof localStorage !== 'undefined' && localStorage.getItem(THEME_KEY)) {
+              return localStorage.getItem(THEME_KEY);
+            }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              return 'dark';
+            }
+            return 'light';
+          }
+
+          function toDataAttr(value) {
+            if (typeof value === 'boolean') return value ? '1' : '0';
+            return String(value ?? '');
+          }
+
+          function createGiscusScript(theme) {
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.crossOrigin = 'anonymous';
+            script.async = true;
+            script.setAttribute('data-repo', config.repo);
+            script.setAttribute('data-repo-id', config.repoId);
+            script.setAttribute('data-category', config.category);
+            script.setAttribute('data-category-id', config.categoryId);
+            script.setAttribute('data-mapping', config.mapping || 'pathname');
+            script.setAttribute('data-strict', toDataAttr(config.strict ?? false));
+            script.setAttribute('data-reactions-enabled', toDataAttr(config.reactionsEnabled ?? true));
+            script.setAttribute('data-emit-metadata', toDataAttr(config.emitMetadata ?? false));
+            script.setAttribute('data-input-position', config.inputPosition || 'bottom');
+            script.setAttribute('data-theme', theme);
+            script.setAttribute('data-lang', config.lang || 'zh-CN');
+            script.setAttribute('data-loading', config.loading || 'lazy');
+            return script;
+          }
+
+          function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+          }
+
+          const container = document.currentScript?.previousElementSibling;
+          if (!container) return;
+
+          const initialTheme = getTheme();
+          container.appendChild(createGiscusScript(initialTheme));
+
+          // Sync theme when the user toggles dark mode.
+          const observer = new MutationObserver(() => {
+            const isDark = document.documentElement.classList.contains('dark');
+            sendMessage({ setConfig: { theme: isDark ? 'dark' : 'light' } });
+          });
+
+          observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['class'],
+          });
+        })(config);
+      </script>
+      </Card>
+    </section>
+  )
+}
+
+<style lang="scss">
+  .comments-section {
+    margin-top: 2rem;
+  }
+
+  .comments-title {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: var(--color-foreground);
+  }
+</style>

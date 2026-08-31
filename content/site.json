@@ -6,6 +6,19 @@
     "avatar": "/avatar.jpg",
     "bio": "AI infra & backend engineer.\nFocus on LLM inference, Agent systems, Kubernetes, Go, and C++ performance.",
     "copyright_name": "io-wy",
+    "giscus": {
+        "repo": "io-wy/io-wy.github.io",
+        "repoId": "R_kgDORuUYEQ",
+        "category": "General",
+        "categoryId": "DIC_kwDORuUYEc4DEj8a",
+        "mapping": "pathname",
+        "strict": false,
+        "reactionsEnabled": true,
+        "emitMetadata": false,
+        "inputPosition": "bottom",
+        "lang": "zh-CN",
+        "loading": "lazy"
+    },
     "socials": [
         {
             "name": "GitHub",
