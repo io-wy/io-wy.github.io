@@ -1,0 +1,102 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import { getCollection } from "astro:content";
+import siteConfig from '../../content/site.json';
+import Card from "@/components/Card.astro";
+
+const SITE_TITLE = siteConfig.title;
+const SITE_DESCRIPTION = siteConfig.description;
+
+const posts = (await getCollection('blog'))
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const grouped = posts.reduce((acc, post) => {
+    const year = post.data.pubDate.getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(post);
+    return acc;
+}, {} as Record<number, typeof posts>);
+
+const years = Object.keys(grouped).map(Number).sort((a, b) => b - a);
+---
+
+<RootLayout title={`Archive - ${SITE_TITLE}`} description={SITE_DESCRIPTION} width="md">
+    <Card>
+        <h1>Archive</h1>
+        <p class="archive-meta">
+            {posts.length} posts across {years.length} years
+        </p>
+    </Card>
+
+    {
+        years.map((year) => (
+            <section class="archive-year">
+                <Card>
+                    <h2 class="year-title">{year}</h2>
+                    <ul class="post-list">
+                        {grouped[year].map((post) => (
+                            <li>
+                                <span class="post-date">
+                                    {post.data.pubDate.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })}
+                                </span>
+                                <a class="post-link" href={`/blog/${post.id}`}>{post.data.title}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </Card>
+            </section>
+        ))
+    }
+</RootLayout>
+
+<style lang="scss">
+    .archive-meta {
+        color: var(--color-muted-foreground);
+        margin: 0.5rem 0 0;
+    }
+
+    .archive-year {
+        margin-top: 1rem;
+
+        .year-title {
+            margin: 0 0 1rem;
+            color: var(--color-primary);
+        }
+    }
+
+    .post-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        li {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin: 0;
+        }
+    }
+
+    .post-date {
+        flex-shrink: 0;
+        font-size: 0.875rem;
+        color: var(--color-muted-foreground);
+        font-variant-numeric: tabular-nums;
+        min-width: 3.5rem;
+    }
+
+    .post-link {
+        color: var(--color-foreground);
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+    }
+</style>

@@ -1,0 +1,69 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import Card from "@/components/Card.astro";
+import siteConfig from '../../content/site.json';
+
+const SITE_TITLE = siteConfig.title;
+---
+
+<RootLayout title={`404 - ${SITE_TITLE}`} description="Page not found" width="sm">
+    <Card id="not-found">
+        <h1>404</h1>
+        <p class="subtitle">Page not found</p>
+        <p class="description">
+            你访问的页面不存在，或者已经被移动到了其他地方。
+        </p>
+        <div class="actions">
+            <a class="button" href="/">回到首页</a>
+            <a class="button" href="/blog">浏览文章</a>
+            <a class="button" href="/tag">查看标签</a>
+        </div>
+    </Card>
+</RootLayout>
+
+<style lang="scss">
+    #not-found {
+        text-align: center;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 0.5rem 0 1rem;
+            color: var(--color-foreground);
+        }
+
+        .description {
+            color: var(--color-muted-foreground);
+            margin-bottom: 2rem;
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .button {
+            display: inline-block;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            background-color: var(--color-card);
+            color: var(--color-foreground);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: var(--color-primary-light);
+            }
+        }
+    }
+</style>

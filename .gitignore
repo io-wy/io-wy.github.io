@@ -23,3 +23,9 @@ pnpm-debug.log*
 # Editor
 .vscode/
 .idea/
+
+# MCP playwright artifacts
+.playwright-mcp/
+
+# debug screenshots
+/k8s-post-toc-left.png

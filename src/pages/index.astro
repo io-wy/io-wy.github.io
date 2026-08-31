@@ -92,20 +92,9 @@ const recentPosts = (await getCollection("blog"))
 </RootLayout>
 
 <style>
-    main {
-        max-width: 70rem;
-        width: 100%;
-        margin: 3rem auto;
-        padding: 0 1rem;
-    }
-
-    main > * {
-        margin-bottom: 2rem;
-    }
-
-    main > *:last-child {
-        margin-bottom: 0;
-    }
+    /* 注意：<main> 属于 RootLayout，这里不能用 `main > *` 之类的 scoped 选择器
+       （会编译成 main[data-astro-cid-j7pv25f6]，而 main 没有这个 cid，永不匹配）。
+       块间距直接用各元素自身的 scoped 规则实现。 */
 
     #avatar-bio {
         display: flex;
@@ -139,6 +128,7 @@ const recentPosts = (await getCollection("blog"))
     #bio > p {
         line-height: 1.5;
         letter-spacing: 0.02rem;
+        white-space: pre-line;
     }
 
     #bio > * {
@@ -176,7 +166,7 @@ const recentPosts = (await getCollection("blog"))
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
-        margin-top: 1rem;
+        margin: 1rem 0 2rem;
     }
 
     #recent-container {

@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import sitemap from '@astrojs/sitemap';
@@ -22,9 +22,6 @@ export default defineConfig({
     }]]
   },
 
-  image: {
-    service: passthroughImageService()
-  },
   vite: {
     resolve: {
       alias: {

@@ -13,8 +13,41 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+function countWords(text: string): number {
+	const body = text.replace(/^---[\s\S]*?---/, '');
+	const cn = (body.match(/[一-龥]/g) || []).length;
+	const en = (body.match(/[a-zA-Z]+/g) || []).length;
+	return cn + en;
+}
+
+const wordCount = countWords(post.body || '');
+const readingTime = Math.max(1, Math.ceil(wordCount / 300));
+
+const allPosts = await getCollection('blog');
+
+const sortedPosts = allPosts
+	.filter((p) => !p.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
+const relatedPosts = allPosts
+	.filter((p) => p.id !== post.id && !p.data.draft)
+	.map((p) => ({
+		...p,
+		score: (p.data.tags || []).filter((tag) => (post.data.tags || []).includes(tag)).length,
+	}))
+	.filter((p) => p.score > 0)
+	.sort((a, b) => {
+		if (b.score !== a.score) return b.score - a.score;
+		return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+	})
+	.slice(0, 3);
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} wordCount={wordCount} readingTime={readingTime} relatedPosts={relatedPosts} prevPost={prevPost} nextPost={nextPost}>
 	<Content />
 </BlogPost>
