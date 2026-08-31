@@ -1,0 +1,179 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import siteConfig from '../../content/site.json';
+import Card from "@/components/Card.astro";
+
+const SITE_TITLE = siteConfig.title;
+const SITE_AUTHOR = (siteConfig as any).author || SITE_TITLE;
+const SITE_AVATAR = (siteConfig as any).avatar || '/avatar.jpg';
+const SITE_BIO = siteConfig.bio;
+const socials = (siteConfig as any).socials || [];
+
+const allPosts = await getCollection('blog');
+const publishedPosts = allPosts.filter(post => !post.data.draft);
+const tagSet = new Set(publishedPosts.flatMap(post => post.data.tags || []));
+const tags = Array.from(tagSet).sort();
+---
+
+<RootLayout title={`About - ${SITE_TITLE}`} description={`About ${SITE_AUTHOR}`} width="md">
+    <Card id="about-hero">
+        <img class="about-avatar" src={SITE_AVATAR} alt={`${SITE_AUTHOR} Avatar`} />
+        <section class="about-intro">
+            <h1 class="emphasize">{SITE_AUTHOR}</h1>
+            <p class="about-bio">{SITE_BIO}</p>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">{publishedPosts.length}</span>
+                    <span class="stat-label">Posts</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">{tags.length}</span>
+                    <span class="stat-label">Tags</span>
+                </div>
+            </div>
+        </section>
+    </Card>
+
+    <Card>
+        <h2>What I write about</h2>
+        <p>
+            这个博客主要记录我在 AI 基础设施、大模型推理服务、Agent 系统、云原生后端和性能优化方面的学习与工程实践。
+            文章既有源码级的深度分析，也有从零开始的知识梳理。
+        </p>
+        <div class="tag-cloud">
+            {tags.map(tag => (
+                <a class="tag" href={`/tag/${tag}`}>{tag}</a>
+            ))}
+        </div>
+    </Card>
+
+    <Card>
+        <h2>Find me</h2>
+        <div class="contact-list">
+            {socials.map((social: any) => (
+                <a class="contact-item" href={social.url} target="_blank" rel="noopener noreferrer">
+                    {social.image ? (
+                        <img src={social.image} alt={social.name} width={24} height={24} style={{ borderRadius: '50%' }} />
+                    ) : (
+                        <Icon name={social.icon} width={24} height={24} />
+                    )}
+                    <span>{social.name}</span>
+                </a>
+            ))}
+        </div>
+    </Card>
+</RootLayout>
+
+<style lang="scss">
+    #about-hero {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 2rem;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.5rem;
+        }
+    }
+
+    .about-avatar {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .about-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .about-bio {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--color-muted-foreground);
+        margin: 0;
+    }
+
+    .about-stats {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @media (max-width: 700px) {
+                align-items: center;
+            }
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-muted-foreground);
+        }
+    }
+
+    .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        .tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 5rem;
+            background-color: var(--color-card);
+            color: var(--color-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: var(--color-primary-light);
+            }
+        }
+    }
+
+    .contact-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--color-card);
+            color: var(--color-foreground);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: var(--color-primary-light);
+            }
+        }
+    }
+</style>
