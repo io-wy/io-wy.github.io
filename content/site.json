@@ -1,23 +1,9 @@
 {
     "title": "io-wy Blog",
-    "description": "io-wy's blog about AI, LLM inference, backend systems, and everything in between.",
-    "author": "io-wy",
+    "description": "io-wy Blog",
     "favicon": "/favicon.jpg",
-    "avatar": "/avatar.jpg",
-    "bio": "AI infra & backend engineer. Writing about LLM inference, Agent systems, Kubernetes, Go, and C++ performance.",
+    "bio": "111",
     "copyright_name": "io-wy",
-    "socials": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/io-wy",
-            "icon": "simple-icons:github"
-        },
-        {
-            "name": "NextSig",
-            "url": "https://nextsig.sast.fun",
-            "image": "https://nextsig.sast.fun/_next/image?url=%2Flogo.jpg&w=48&q=75"
-        }
-    ],
     "links": [
         {
             "name": "SeanDictionary",

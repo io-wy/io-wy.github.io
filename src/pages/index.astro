@@ -8,61 +8,54 @@ import PostCard from "../components/PostCard.astro";
 
 const SITE_TITLE = siteConfig.title;
 const SITE_DESCRIPTION = siteConfig.description;
-const SITE_BIO = siteConfig.bio;
-const SITE_AVATAR = siteConfig.avatar;
-const socials = (siteConfig as any).socials || [];
 
 const posts = (await getCollection("blog"))
     .filter((post) => post.data.pinned)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const recentPosts = (await getCollection("blog"))
-    .filter((post) => !post.data.draft && !post.data.pinned)
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 3);
 ---
 
 <RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION} width="md">
     <Card id="avatar-bio">
-        <img class="big-avatar" src={SITE_AVATAR} alt="Avatar"/>
+        <img class="big-avatar" src="/avatar.jpg" alt="Avatar"/>
         <section id="bio">
             <h2 class="emphasize">
                 {SITE_TITLE}
             </h2>
             <p>
-                {SITE_BIO}
+                The dreamer never existed.
             </p>
             <div>
                 <p>
                     <strong> Contact me: </strong>
                 </p>
                 <div id="contact">
-                    {
-                        socials.map((social: any) => (
-                            <a
-                                class="icon-link"
-                                href={social.url}
-                                target="_blank"
-                                aria-label={social.name}
-                            >
-                                {social.image ? (
-                                    <img
-                                        src={social.image}
-                                        alt={`${social.name} Logo`}
-                                        width={32}
-                                        height={32}
-                                        style={{ borderRadius: '50%' }}
-                                    />
-                                ) : (
-                                    <Icon
-                                        name={social.icon}
-                                        width={32}
-                                        height={32}
-                                    />
-                                )}
-                            </a>
-                        ))
-                    }
+                    <a
+                        class="icon-link"
+                        href="https://github.com/io-wy"
+                        target="_blank"
+                        aria-label="GitHub"
+                    >
+                        <Icon
+                            name="simple-icons:github"
+                            width={32}
+                            height={32}
+                        />
+                    </a>
+                    <a
+                        class="icon-link"
+                        href="https://nextsig.sast.fun"
+                        target="_blank"
+                        aria-label="NextSig"
+                    >
+                
+                        <img 
+                            src="https://nextsig.sast.fun/_next/image?url=%2Flogo.jpg&w=48&q=75" 
+                            alt="NextSig Logo"  
+                            width={32}        
+                            height={32}         
+                            style={{ borderRadius: '50%' }}
+                        />
+                    </a>
                 </div>
             </div>
         </section>
@@ -74,17 +67,6 @@ const recentPosts = (await getCollection("blog"))
     <section id="pinned-container">
         {
             posts.map((post) => (
-                <PostCard {...post.data} slug={post.id} />
-            ))
-        }
-    </section>
-
-    <Card>
-        <h3>Recent Posts</h3>
-    </Card>
-    <section id="recent-container">
-        {
-            recentPosts.map((post) => (
                 <PostCard {...post.data} slug={post.id} />
             ))
         }
@@ -173,13 +155,6 @@ const recentPosts = (await getCollection("blog"))
     }
 
     #pinned-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    #recent-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
