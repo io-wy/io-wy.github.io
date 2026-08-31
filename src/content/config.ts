@@ -7,13 +7,17 @@ const blog = defineCollection({
 		base: 'content/blog',
 	}),
 	schema: z.object({
-		title: z.string(),
-		description: z.string(),
+		title: z.string().min(1),
+		description: z.string().min(1),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		pinned: z.boolean().optional(),
-		tags: z.array(z.string()),
+		tags: z.array(
+			z.string()
+				.min(1)
+				.transform((tag) => tag.toLowerCase())
+		).min(1),
 		draft: z.boolean().optional(),
 	}),
 });
