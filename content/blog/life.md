@@ -2,7 +2,7 @@
 title: '没什么'
 description: '不是很多的，莫名其妙的碎碎念'
 pubDate: '2026-09-27'
-heroImage: '/img/9.jpg'
+heroImage: '/img/9.avif'
 tags:
   - life
 ---

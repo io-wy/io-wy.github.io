@@ -2,7 +2,7 @@
 title: 'H.264 Encoding Protocol'
 description: 'H.264 video compression encoding protocol explained'
 pubDate: '2025-03-10'
-heroImage: '/img/7.png'
+heroImage: '/img/7.avif'
 tags:
   - others
   - video

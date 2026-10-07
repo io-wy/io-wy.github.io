@@ -2,7 +2,7 @@
 title: 'OpenCode Overview'
 description: 'Opensource Coding-Agent'
 pubDate: '2026-02-13'
-heroImage: '/img/19.png'
+heroImage: '/img/19.avif'
 tags:
   - tools
   - ai

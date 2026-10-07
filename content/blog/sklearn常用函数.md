@@ -2,7 +2,7 @@
 title: 'sklearn Common Functions'
 description: 'sklearn data preprocessing and feature engineering functions'
 pubDate: '2025-01-20'
-heroImage: '/img/4.png'
+heroImage: '/img/4.avif'
 tags:
   - ai
   - sklearn

@@ -2,7 +2,7 @@
 title: 'Neural Network'
 description: 'Understanding neural networks from CNN to Transformer to Diffusion'
 pubDate: '2025-03-27'
-heroImage: '/img/1.png'
+heroImage: '/img/1.avif'
 pinned: true
 tags:
   - ai

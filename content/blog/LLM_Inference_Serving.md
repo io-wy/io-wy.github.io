@@ -2,7 +2,7 @@
 title: 'LLM-Inference-Serving'
 description: '大模型推理服务系统（请求管理、会话、KV Cache、调度批次与分布式Worker）'
 pubDate: '2026-07-26'
-heroImage: '/img/23.png'
+heroImage: '/img/23.avif'
 tags:
   - llm
   - infra

@@ -2,7 +2,7 @@
 title: 'KV Cache Explained'
 description: 'KV Cache mechanism in LLM inference'
 pubDate: '2025-12-20'
-heroImage: '/img/8.png'
+heroImage: '/img/8.avif'
 tags:
   - ai
   - llm

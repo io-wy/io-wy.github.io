@@ -2,7 +2,7 @@
 title: 'Go Runtime'
 description: 'Go GMP scheduling, memory management and garbage collection'
 pubDate: '2026-02-22'
-heroImage: '/img/5.png'
+heroImage: '/img/5.avif'
 pinned: true
 tags:
   - backend

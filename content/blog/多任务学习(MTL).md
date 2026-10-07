@@ -2,7 +2,7 @@
 title: 'Multi-Task Learning (MTL)'
 description: 'Multi-task learning network architecture and loss design guide'
 pubDate: '2025-03-24'
-heroImage: '/img/6.png'
+heroImage: '/img/6.avif'
 tags:
   - ai
   - machine-learning

@@ -2,7 +2,7 @@
 title: 'Kubernetes Quick Start'
 description: 'K8s container orchestration and deployment guide'
 pubDate: '2025-06-10'
-heroImage: '/img/3.png'
+heroImage: '/img/3.avif'
 tags:
   - devops
   - kubernetes

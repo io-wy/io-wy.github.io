@@ -2,7 +2,7 @@
 title: 'Agent'
 description: 'just agent'
 pubDate: '2026-03-28'
-heroImage: '/img/12.png'
+heroImage: '/img/12.avif'
 pinned: true
 tags:
   - agent
