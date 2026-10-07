@@ -2,6 +2,7 @@
 title: 'sandbox'
 description: 'Agent Sandbox 技术梳理：文件系统、隔离底座、快照与内存恢复（WIP）'
 pubDate: '2026-10-07'
+heroImage: '/img/8.avif'
 tags:
   - infra
   - sandbox
